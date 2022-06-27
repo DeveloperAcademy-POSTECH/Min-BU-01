@@ -35,7 +35,6 @@ struct GeneratorView: View {
                 }
             }
         }
-        .navigationTitle("RandomWordsGenerator")
     }
 }
 
