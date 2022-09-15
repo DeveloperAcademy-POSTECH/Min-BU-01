@@ -17,14 +17,14 @@ struct WordList: View {
                 Text(randomWords)
             }
             .task{
-                await loadData()
+                await wordData()
             }
         }
     }
     
-    func loadData() async{
+    func wordData() async{
         guard let url = URL(string:"https://random-word-api.herokuapp.com/word?number=\(numberOfWords+1)") else {
-            print("Invalid")
+            print("Invalid URL")
             return
         }
         
@@ -35,7 +35,7 @@ struct WordList: View {
                 words = decodedResponse
             }
         } catch{
-            print("Invalid!!")
+            print("Invalid URL")
         }
     }
     
